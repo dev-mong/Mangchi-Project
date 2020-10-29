@@ -2,8 +2,12 @@
 Spring Project - 우리 동네 대여 서비스 
 <hr />
 
-> 가까운 동네 이웃들끼리 필요한 물건을 대여하고 
-> 서로의 일상을 공유하고 물품을 나눔하는 매칭 서비스 플랫폼
+>가까운 동네 이웃들끼리 필요한 물건을 대여하고 물품을 나눔하는 매칭 서비스 플랫폼
+>
+>[클라이언트 페이지 Link](https://github.com/seongMinS2/Mangchi-Final) 
+
+
+
 
 
 
@@ -35,6 +39,9 @@ Spring Project - 우리 동네 대여 서비스
 
 
 
+
+
+
 #### 주요 기능 및 담당 업무
 
 ------
@@ -44,8 +51,17 @@ Spring Project - 우리 동네 대여 서비스
   * 위도 경도 계산식을 활용하여 쿼리문 작성 후 거리 순으로 출력
   *  KaKao Map Api를 활용하여 사용자의 정확한 위치를 마커로 표시
   * Cookie 값을 활용하여 시간 별 매칭 상태 변경 조건 구현
+  
 * 후기 작성 
   * 사용자의 서비스 이용 후기 작성 구현
+
+* 마이 페이지
+  * 마이 페이지에 요청 글, 대여 글, 리뷰 출력
+  
+
+
+
+
 
 
 
@@ -68,9 +84,26 @@ Spring Project - 우리 동네 대여 서비스
 
 
 
+
+
+
 #### 구현 - 소스코드
 
 ------
+* 요청 게시판
+  * [Controller](https://github.com/qkrwlsaud/Mangchi-Project/tree/main/FinalProject/Manch-RequestList/src/main/java/com/aia/rl/controllerl)  [Service](https://github.com/qkrwlsaud/Mangchi-Project/tree/main/FinalProject/Manch-RequestList/src/main/java/com/aia/rl/service) [Dao](https://github.com/qkrwlsaud/Mangchi-Project/blob/main/FinalProject/Manch-RequestList/src/main/java/com/aia/rl/dao/RequestDao.java) [View](https://github.com/seongMinS2/Mangchi-Final/tree/master/Mangch_Client/src/main/webapp/WEB-INF/views/request)
+
+* 후기 작성
+  * [Controller](https://github.com/qkrwlsaud/Mangchi-Project/blob/main/FinalProject/Manch-RequestList/src/main/java/com/aia/rl/review/controller/ReviewController.java) [Service](https://github.com/qkrwlsaud/Mangchi-Project/tree/main/FinalProject/Manch-RequestList/src/main/java/com/aia/rl/review/service) [Dao](https://github.com/qkrwlsaud/Mangchi-Project/blob/main/FinalProject/Manch-RequestList/src/main/java/com/aia/rl/review/dao/ReviewDao.java) [View](https://github.com/seongMinS2/Mangchi-Final/tree/master/Mangch_Client/src/main/webapp/WEB-INF/views/review)
+
+* 마이 페이지 
+  * [Controller](https://github.com/qkrwlsaud/Mangchi-Project/blob/main/FinalProject/Manch-RequestList/src/main/java/com/aia/rl/mypage/controller/MypageRequestController.java) [Service](https://github.com/qkrwlsaud/Mangchi-Project/blob/main/FinalProject/Manch-RequestList/src/main/java/com/aia/rl/mypage/service/MyListService.java) [Dao](https://github.com/qkrwlsaud/Mangchi-Project/blob/main/FinalProject/Manch-RequestList/src/main/java/com/aia/rl/mypage/dao/MypageDao.java) [View](https://github.com/seongMinS2/Mangchi-Final/tree/master/Mangch_Client/src/main/webapp/WEB-INF/views/member)
+
+
+
+
+
+
 
 
 
