@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.aia.rl.review.dao.ReviewDao">
+
+	<resultMap id="requestList"
+		type="com.aia.rl.model.RequestReg">
+		<result property="reqIdx" column="request_idx" />
+		<result property="reqWriter" column="request_writer" />
+		<result property="reqTitle" column="request_title" />
+		<result property="reqHelper" column="request_helper" />
+		<result property="reqDateTime" column="request_date" />
+		<result property="reqAddr" column="request_addr" />
+		<result property="reqContents" column="request_contents" />
+		<result property="reqLatitude" column="request_latitude" />
+		<result property="reqLongitude" column="request_longitude" />
+		<result property="reqCount" column="request_count" />
+		<result property="reqStatus" column="request_status" />
+		<result property="reqImg" column="request_img" />
+	</resultMap>
+	
+
+	<resultMap id="review" type="com.aia.rl.review.model.Review">
+		<result column="review_idx" property="reviewIdx" />
+		<result column="request_idx" property="reqIdx" />
+		<result column="review_receiver" property="receiver" />
+		<result column="review_writer" property="writer" />
+		<result column="review_text" property="text" />
+		<result column="review_avg" property="avg" />
+		<result column="review_status" property="status" />
+		<collection property="reqList" resultMap="requestList" />
+	</resultMap>
+	
+	
+	
+	<!-- 회원 조인 시 사용 -->
+	<resultMap id="reviewMember" type="com.aia.rl.review.model.Review">
+		<result column="review_idx" property="reviewIdx" />
+		<result column="request_idx" property="reqIdx" />
+		<result column="review_receiver" property="receiver" />
+		<result column="review_writer" property="writer" />
+		<result column="review_text" property="text" />
+		<result column="review_avg" property="avg" />
+		<result column="review_status" property="status" />
+		<collection property="member" resultMap="memberInfo" />
+	</resultMap>
+	
+	<resultMap id="memberInfo" type="com.aia.rl.member.model.Member">
+		<result property="mImg" column="member_img" />
+		<result property="avg" column="member_score" />
+	</resultMap>
+	
+	
+	
+	
+	
+	
+	
+	<!-- 매칭 완료 시 리뷰 상태 등록 -->
+	
+	<insert id="insertStatus" parameterType="com.aia.rl.review.model.Review">
+	insert into Mangchi.review
+	(request_idx,review_receiver,review_writer,review_status)
+	values(#{reqIdx},#{receiver},#{writer},#{status})
+	</insert>
+	
+	<!-- 리뷰 등록 (리뷰 작성 한거 업데이트)-->
+	<update id="updateReview" parameterType="com.aia.rl.review.model.Review">
+	
+	update Mangchi.review set review_text = #{text}, review_avg= #{avg},
+		review_status = #{status} where review_idx = #{reviewIdx}
+	</update>
+	
+	
+	<!-- 리뷰 쓸 사람 선택 -->
+<!-- 	<select id="selectReceiver" resultMap="review"> -->
+	<select id="selectReceiver" resultMap="reviewMember">
+		<!-- select * from Mangchi.review where review_writer=#{reviewWriter}  -->
+		select r.review_idx,r.review_receiver,m.member_Img,r.review_status from Mangchi.review as r left join Mangchi.member as m on r.review_receiver = m.member_nick where r.review_writer=#{reviewWriter} and r.request_idx=#{reqIdx} limit #{startRow},#{count};
+		
+	</select>
+	
+	
+	<select id="receiverTotal" resultType="int">
+		<!-- select * from Mangchi.review where review_writer=#{reviewWriter}  -->
+		select count(*) from Mangchi.review as r left join Mangchi.member as m on r.review_receiver = m.member_nick where r.review_writer=#{reviewWriter} and r.request_idx=#{reqIdx};
+		
+	</select>
+	
+	
+	
+	
+	<!-- 평점을 계산 해서 출력-->
+	<select id="selectAvg" resultType="int">
+		select avg(review_avg) from Mangchi.review where review_receiver=#{mNick} and review_status=1;
+	</select>
+	
+
+	
+	
+	<select id="receiveView" resultType="int">
+		select count(*) from Mangchi.review where review_receiver=#{mNick} and review_status=1;
+	</select>
+	
+	<!-- 회원이 작성한 리뷰 -->
+	<select id="reviewList" resultMap="review">
+		select request_title,review_idx,review_receiver,review_writer,review_text,review_status
+		from Mangchi.review as w join Mangchi.request_list as r 
+		on r.request_idx=w.request_idx and w.review_writer=#{mNick} and w.review_status=#{status}
+		<!-- and w.review_status=1 -->
+		limit #{startRow}, #{count}
+	</select>
+	
+	
+	<!-- 회원이 작성한 리뷰 전체 수  -->			
+	<select id="totalReview" resultType="int">
+		<!-- select count(*) from Mangchi.review where review_writer=#{mNick} and review_status=1 -->
+		select count(*) from Mangchi.review where review_writer=#{mNick} and review_status=#{status}
+	</select>
+	
+	
+	<!-- 리뷰 작성 여부 확인 -->
+	<select id="selectReqIdx" resultMap="review">
+		select * from Mangchi.review where request_idx=#{idx}
+	</select>
+	<!-- 게시글 삭제  -->
+	<select id="selectReqReview" resultMap="review">
+		select * from Mangchi.review where request_idx=#{idx}
+	</select>
+
+
+
+	<!-- 회원 리뷰 등록하기 -->
+	<update id="updateMember" parameterType="map">
+		update Mangchi.member set member_score=#{avg} where member_nick=#{receiver}
+	</update>
+
+
+	
+	
+</mapper>
