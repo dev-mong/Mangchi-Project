@@ -1,6 +1,4 @@
-
-
-# 우리 동네 대여 서비스 - Request & Review
+# Mangchi-Project 
 Spring Project - 우리 동네 대여 서비스 
 <hr />
 
