@@ -94,7 +94,7 @@ Spring Project - 우리 동네 대여 서비스
 <hr />
 
 * 요청 게시판
-  * [Controller](https://github.com/qkrwlsaud/Mangchi-Project/tree/main/FinalProject/Manch-RequestList/src/main/java/com/aia/rl/controllerl)  [Service](https://github.com/qkrwlsaud/Mangchi-Project/tree/main/FinalProject/Manch-RequestList/src/main/java/com/aia/rl/service) [Dao](https://github.com/qkrwlsaud/Mangchi-Project/blob/main/FinalProject/Manch-RequestList/src/main/java/com/aia/rl/dao/RequestDao.java) [View](https://github.com/seongMinS2/Mangchi-Final/tree/master/Mangch_Client/src/main/webapp/WEB-INF/views/request)
+  * [Controller](https://github.com/qkrwlsaud/Mangchi-Project/tree/main/FinalProject/Manch-RequestList/src/main/java/com/aia/rl/controller)  [Service](https://github.com/qkrwlsaud/Mangchi-Project/tree/main/FinalProject/Manch-RequestList/src/main/java/com/aia/rl/service) [Dao](https://github.com/qkrwlsaud/Mangchi-Project/blob/main/FinalProject/Manch-RequestList/src/main/java/com/aia/rl/dao/RequestDao.java) [View](https://github.com/seongMinS2/Mangchi-Final/tree/master/Mangch_Client/src/main/webapp/WEB-INF/views/request)
 
 * 후기 작성
   * [Controller](https://github.com/qkrwlsaud/Mangchi-Project/blob/main/FinalProject/Manch-RequestList/src/main/java/com/aia/rl/review/controller/ReviewController.java) [Service](https://github.com/qkrwlsaud/Mangchi-Project/tree/main/FinalProject/Manch-RequestList/src/main/java/com/aia/rl/review/service) [Dao](https://github.com/qkrwlsaud/Mangchi-Project/blob/main/FinalProject/Manch-RequestList/src/main/java/com/aia/rl/review/dao/ReviewDao.java) [View](https://github.com/seongMinS2/Mangchi-Final/tree/master/Mangch_Client/src/main/webapp/WEB-INF/views/review)
