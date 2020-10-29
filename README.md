@@ -64,7 +64,8 @@
 
 
 
-![image-20201029151322209](C:\Users\박진명\AppData\Roaming\Typora\typora-user-images\image-20201029151322209.png)
+![image-20201029151322209](https://user-images.githubusercontent.com/63437506/97536469-88a88600-1a00-11eb-8f54-bd8bcaa5ccb1.png)
+
 
 
 
