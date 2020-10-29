@@ -7,14 +7,12 @@ Spring Project - 우리 동네 대여 서비스
 >[클라이언트 페이지 Link](https://github.com/seongMinS2/Mangchi-Final) 
 
 
+<br>
+<br>
 
+### 기술 / 구조 
 
-
-
-#### 기술 / 구조 
-
-------
-
+<hr />
 - 웹 표준 
 
   `HTML5` `CSS3` `JavaScript` `jQuery` `Bootstrap4` `W3C`
@@ -39,12 +37,13 @@ Spring Project - 우리 동네 대여 서비스
 
 
 
+<br>
+<br>
 
 
+### 주요 기능 및 담당 업무
 
-#### 주요 기능 및 담당 업무
-
-------
+<hr />
 
 * 요청 게시판 CRUD 
   * Summernote를 활용하여 요청 글 작성 구현
@@ -61,13 +60,14 @@ Spring Project - 우리 동네 대여 서비스
 
 
 
+<br>
+<br>
 
 
 
+### 요청 게시판 & 후기 작성 설계 
 
-#### 요청 게시판 & 후기 작성 설계 
-
-------
+<hr />
 
 * DB - 전체 ERD
 
@@ -84,12 +84,13 @@ Spring Project - 우리 동네 대여 서비스
 
 
 
+<br>
+<br>
 
 
+### 구현 - 소스코드
 
-#### 구현 - 소스코드
-
-------
+<hr />
 * 요청 게시판
   * [Controller](https://github.com/qkrwlsaud/Mangchi-Project/tree/main/FinalProject/Manch-RequestList/src/main/java/com/aia/rl/controllerl)  [Service](https://github.com/qkrwlsaud/Mangchi-Project/tree/main/FinalProject/Manch-RequestList/src/main/java/com/aia/rl/service) [Dao](https://github.com/qkrwlsaud/Mangchi-Project/blob/main/FinalProject/Manch-RequestList/src/main/java/com/aia/rl/dao/RequestDao.java) [View](https://github.com/seongMinS2/Mangchi-Final/tree/master/Mangch_Client/src/main/webapp/WEB-INF/views/request)
 
