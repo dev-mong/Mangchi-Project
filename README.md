@@ -13,17 +13,29 @@ Spring Project - 우리 동네 대여 서비스
 ### 기술 / 구조 
 
 <hr />
-* 웹 표준 
+- 웹 표준 
+
   `HTML5` `CSS3` `JavaScript` `jQuery` `Bootstrap4` `W3C`
-* DBMS  - `MySQL`
-* Spring Framework, Mybatis
-* API 
+
+- DBMS  - `MySQL`
+
+- Spring Framework, Mybatis
+
+- API 
+
    `Rest API` `kakao API` `kakao 주소 API` `kakao map API` `summernote` `socket API`
-* RESTful API 구조
+
+- RESTful API 구조
+
   서버와 클라이언트 통신을 위한 REST 인터페이스 구현
-* WAS - `Tomcat8`
-* AWS 배포 
+
+- WAS - `Tomcat8`
+
+- AWS 배포 
+
   `EC2` `RDS`
+
+
 
 
 <br>
@@ -80,6 +92,7 @@ Spring Project - 우리 동네 대여 서비스
 ### 구현 - 소스코드
 
 <hr />
+
 * 요청 게시판
   * [Controller](https://github.com/qkrwlsaud/Mangchi-Project/tree/main/FinalProject/Manch-RequestList/src/main/java/com/aia/rl/controllerl)  [Service](https://github.com/qkrwlsaud/Mangchi-Project/tree/main/FinalProject/Manch-RequestList/src/main/java/com/aia/rl/service) [Dao](https://github.com/qkrwlsaud/Mangchi-Project/blob/main/FinalProject/Manch-RequestList/src/main/java/com/aia/rl/dao/RequestDao.java) [View](https://github.com/seongMinS2/Mangchi-Final/tree/master/Mangch_Client/src/main/webapp/WEB-INF/views/request)
 
